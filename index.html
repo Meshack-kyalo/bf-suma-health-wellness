@@ -15,7 +15,7 @@
     <div class="container">
       <h1>Bf Suma</h1>
       <nav>
-        <ul>
+        <ul id="nav-links">
           <li><a href="#hero">Home</a></li>
           <li><a href="#services">Services</a></li>
           <li><a href="#resources">Resources</a></li>
@@ -23,18 +23,20 @@
           <li><a href="#contact">Contact</a></li>
         </ul>
       </nav>
-      <button class="menu-toggle" aria-label="Toggle navigation menu">
+      <button class="menu-toggle" aria-label="Toggle navigation menu" id="menu-toggle">
         <span></span><span></span><span></span>
       </button>
     </div>
   </header>
 
-  <!-- ========== Hero Section ========== -->
+  <!-- ========== Hero Section (Updated) ========== -->
   <section id="hero" class="hero">
-    <div class="container">
-      <h2>Support for Your General Health Well-being</h2>
-      <p>Connect with licensed professionals, counselors, and wellness coaches to support your journey.</p>
-      <a href="#contact" class="btn-primary">Get Started</a>
+    <div class="container hero-content">
+      <div class="hero-text">
+        <h2>Support for Your General Health Well-being</h2>
+        <p>Connect with licensed professionals, counselors, and wellness coaches to support your journey.</p>
+        <a href="#contact" class="btn-primary">Get Started</a>
+      </div>
     </div>
   </section>
 
@@ -187,5 +189,18 @@
     </div>
   </footer>
 
+  <script>
+    const menuToggle = document.getElementById('menu-toggle');
+    const navLinks = document.getElementById('nav-links');
+
+    menuToggle.addEventListener('click', () => {
+      navLinks.classList.toggle('active');
+    });
+
+    window.addEventListener('scroll', () => {
+      const header = document.querySelector('header');
+      header.classList.toggle('scrolled', window.scrollY > 50);
+    });
+  </script>
 </body>
 </html>
